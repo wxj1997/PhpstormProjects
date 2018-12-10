@@ -1,0 +1,21 @@
+~~~[api]
+post:/127.0.0.1:8080/demo01/register.html
+*int:id#
+name#
+password#
+<<<
+success
+{
+"erroyCode":0,
+"result":{
+"id":"1",
+"name":张三，
+"password":123456
+    }
+}
+<<<
+error
+{
+"erroyCode":"1"
+}
+~~~
