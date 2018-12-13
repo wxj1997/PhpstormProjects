@@ -2,7 +2,7 @@
 $img_w = 100;
 $img_h = 30;
 //生成的验证码为四则运算
-$op_arr = array("+", "-", "*", "/");
+$op_arr = array("+", "-");
 $num1 = rand(1, 99);
 $num2 = rand(1, 99);
 $ope = $op_arr[rand(0, 1)];
