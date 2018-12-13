@@ -1,0 +1,39 @@
+<html>
+<head>
+    <script type="text/javascript">
+        function loadXMLDoc()
+        {
+            var xmlhttp;
+            if (window.XMLHttpRequest)
+            {// code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp=new XMLHttpRequest();
+            }
+            else
+            {// code for IE6, IE5
+                xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange=function()
+            {
+                if (xmlhttp.readyState==4 && xmlhttp.status==200)
+                {
+                    document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+                }
+            }
+            xmlhttp.open("POST","demo_post2.php",true);
+            //如果需要像 HTML 表单那样 POST 数据，请使用 setRequestHeader() 来添加 HTTP 头。然后在 send() 方法中规定您希望发送的数据：
+            //在Form元素的语法中，EncType表明提交数据的格式 用 Enctype 属性指定将数据回发到服务器时浏览器使用的编码类型。 窗体数据被编码为名称/值对
+            //http-关于application/x-www-form-urlencoded等字符编码的解释说明 - CSDN博客
+           // http://blog.csdn.net/klarclm/article/details/7711021
+            xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+            xmlhttp.send("fname=Bill&lname=Gates");
+        }
+    </script>
+</head>
+<body>
+
+<h2>AJAX</h2>
+<button type="button" onclick="loadXMLDoc()">请求数据</button>
+<div id="myDiv"></div>
+
+</body>
+</html>
