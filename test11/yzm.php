@@ -14,11 +14,11 @@ $_SESSION['code'] = $code;
 //生成画布
 $img = imagecreatetruecolor($img_w, $img_h);
 //为画布分配颜色
-$bg_color = imagecolorallocate($img, 170, 153, 153);
+$bg_color = imagecolorallocate($img, 255, 255, 255);
 //设置画布背景色
 imagefill($img, 0, 0, $bg_color);
 //设定字符串颜色
-$str_color = imagecolorallocate($img, 255, 255, 255);
+$str_color = imagecolorallocate($img, 0, 0, 0);
 //将码值写入图片中
 imagestring($img, 5, 25, 3, $code, $str_color);
 //添加干扰线

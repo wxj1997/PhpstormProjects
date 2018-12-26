@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="js/mui.min.js"></script>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<script type="text/javascript" charset="utf-8">
+			mui.init();
+		</script>
+	</head>
+
+	<body>
+		<form class="mui-input-group" action="testLoginPdoModel.php" method="post">
+			<div class="mui-input-row">
+				<label>用户名</label>
+				<input type="text" class="mui-input-clear" placeholder="请输入用户名" name="uname">
+			</div>
+			<div class="mui-input-row">
+				<label>密码</label>
+				<input type="password" class="mui-input-password" placeholder="请输入密码" name="upasswd">
+			</div>
+			<div class="mui-button-row">
+				<button type="submit" class="mui-btn mui-btn-primary">登录</button>
+				<a href="register.html"><button type="button" class="mui-btn mui-btn-primary">注册 </button></a>
+			</div>
+		</form>
+
+	</body>
+
+</html>
