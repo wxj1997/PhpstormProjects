@@ -24,7 +24,8 @@
     span a {
         color: blue;
     }
-    h1{
+
+    h1 {
         display: inline;
     }
 
@@ -32,7 +33,10 @@
 
 
 <?php
+header("content-type:text/html;charset=utf-8");
 session_start();
+require_once 'MySQLDB.class.php';
+$db = MySQLDB::getInstance();
 if (isset($_SESSION["name"])) { ?>
 
     <h1>欢迎<?= $_SESSION["name"] ?>登录</h1>
@@ -72,7 +76,8 @@ if (isset($_SESSION["name"])) { ?>
     $sql .= " limit $index ,$currentCount ";
     /*echo $sql;*/
     $res = mysql_query($sql);
-    while ($row = mysql_fetch_assoc($res)) {
+    while ($row = mysql_fetch_assoc($res))
+        /*while ($row=$db->fetchRow($sql))*/ {
         ?>
         <ul>
             <a href="content.php?id=<?php echo $row["id"]; ?>">

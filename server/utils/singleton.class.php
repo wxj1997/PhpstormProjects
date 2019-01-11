@@ -18,7 +18,7 @@ class SingletonV1
     }
 
     //静态方法，单例统一访问入口
-    static public function getInstance()
+    public static function getInstance()
     {
         if (is_null(self::$_instance) || isset (self::$_instance)) {
             self::$_instance = new self ();
